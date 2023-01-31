@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const vehicleCountModel = require('../model/vehicleCountModel')
 
 
 router.get("/:id", async (req, res) => {
