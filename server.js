@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGO_CONNECT_SECRET, () => {
 // ? import routes
 const updateVehicles = require("./routes/updateVehicles.routes");
 const getVehiclesCount = require("./routes/getVehiclesCount.routes");
+const getCountdown = require("./routes/getCountdown.routes");
 
 // ? Routes
 app.get('/', (req,res) => {
@@ -26,5 +27,6 @@ app.get('/', (req,res) => {
 })
 app.use("/updateVehiclesCount", updateVehicles);
 app.use("/getVehiclesCount", getVehiclesCount);
+app.use("/getCountdown", getCountdown);
 
 app.listen(port, () => console.log("Server started at port " + port));
