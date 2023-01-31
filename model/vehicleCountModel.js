@@ -9,14 +9,15 @@ const vehicleCountSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  // light_3: {
-  //   type: Number,
-  //   required: true,
-  // },
-  // light_4: {
-  //   type: Number,
-  //   required: true,
-  // },
+  light_3: {
+    type: Number,
+    required: true,
+  },
+  light_4: {
+    type: Number,
+    // required: true,
+  },
+  timerList: []
 });
 
 module.exports = mongoose.model("vehicleCounts", vehicleCountSchema);
