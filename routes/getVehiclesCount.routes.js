@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 router.get("/current", async (req, res) => {
   try {
     const response = await vehicleCountModel.find();
-    return res.send(response[0]);
+    return res.send(response[response.length - 1]);
   } catch (err) {
     return res.status(500).json({
       message: err.message,
