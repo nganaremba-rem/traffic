@@ -21,6 +21,9 @@ const updateVehicles = require("./routes/updateVehicles.routes");
 const getVehiclesCount = require("./routes/getVehiclesCount.routes");
 
 // ? Routes
+app.get('/', (req,res) => {
+  res.send("Traffic backend working")
+})
 app.use("/updateVehiclesCount", updateVehicles);
 app.use("/getVehiclesCount", getVehiclesCount);
 
