@@ -23,9 +23,10 @@ router.get("/:id", async (req, res) => {
   const id = req.params.id
   try {
     const response = await vehicleCountModel.find();
-    return res.send(response[response.length - 1][ids[parseInt(id)]]);
+    const obj = response[response.length - 1]
+    return res.json({count: obj[ids[id]]});
   } catch (err) {
-    return res.status(500).json({
+    return res.sendStatus(500).json({
       message: err.message,
     });
   }
